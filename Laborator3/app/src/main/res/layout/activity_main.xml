@@ -44,12 +44,10 @@
                 style="@android:style/Widget.Material.Button"
                 android:layout_width="59dp"
                 android:layout_height="59dp"
-                android:layout_marginTop="16dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
+                android:layout_marginTop="8dp"
                 android:text="0"
-                app:layout_constraintEnd_toStartOf="@+id/buttonSharp"
-                app:layout_constraintTop_toBottomOf="@+id/button8" />
+                app:layout_constraintTop_toBottomOf="@+id/button8"
+                tools:layout_editor_absoluteX="169dp" />
 
             <Button
                 android:id="@+id/buttonStar"
@@ -98,12 +96,9 @@
                 style="@android:style/Widget.Material.Button"
                 android:layout_width="59dp"
                 android:layout_height="59dp"
-                android:layout_marginTop="12dp"
-                android:layout_marginEnd="32dp"
-                android:layout_marginRight="32dp"
                 android:text="8"
-                app:layout_constraintEnd_toStartOf="@+id/button9"
-                app:layout_constraintTop_toBottomOf="@+id/button5" />
+                tools:layout_editor_absoluteX="169dp"
+                tools:layout_editor_absoluteY="238dp" />
 
             <Button
                 android:id="@+id/button9"
@@ -217,6 +212,21 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/buttonSharp"
                 app:srcCompat="@drawable/hangup" />
+
+            <ImageButton
+                android:id="@+id/contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                app:layout_constraintEnd_toStartOf="@+id/buttonReject"
+                app:layout_constraintHorizontal_bias="0.542"
+                app:layout_constraintStart_toEndOf="@+id/buttonCall"
+                app:layout_constraintTop_toBottomOf="@+id/button0"
+                app:srcCompat="@android:drawable/ic_input_add" />
         </android.support.constraint.ConstraintLayout>
 
     </LinearLayout>

@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -37,6 +38,7 @@ public class MainActivity extends AppCompatActivity {
         Button btnSharp = findViewById(R.id.buttonSharp);
         ImageButton btnBackSpace = findViewById(R.id.buttonDelete);
         ImageButton btnCall = findViewById(R.id.buttonCall);
+        ImageButton btnContacts = findViewById(R.id.contacts);
 
         final Button array[] = {btn0, btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btnStar, btnSharp};
         for (int i = 0; i < array.length; i++){
@@ -71,6 +73,20 @@ public class MainActivity extends AppCompatActivity {
                     Intent intent = new Intent(Intent.ACTION_CALL);
                     intent.setData(Uri.parse("tel:" + display.getText().toString()));
                     startActivity(intent);
+                }
+            }
+        });
+
+        btnContacts.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String phoneNumber = display.getText().toString();
+                if (phoneNumber.length() > 0) {
+                    Intent intent = new Intent("com.example.contactsmanager.intent.action.MainActivity");
+                    intent.putExtra("com.example.contactsmanager.PHONE_NUMBER_KEY", phoneNumber);
+                    startActivityForResult(intent, 2);
+                } else {
+                    Toast.makeText(getApplication(), "Boule", Toast.LENGTH_LONG).show();
                 }
             }
         });
